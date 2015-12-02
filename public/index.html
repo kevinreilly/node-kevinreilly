@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="/">
+
+	<title>kevinreilly.io</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css">
+	<link rel="stylesheet" href="css/screen.css"> <!-- custom styles -->
+
+</head>
+<body ng-app="webApp" ng-controller="mainCtrl">
+
+	<div class="menu">
+		<div class="menu-content text-center">
+			<button><i class="fa fa-times"></i></button>
+			<div class="div-table">
+				<div class="div-table-row">
+					<div class="div-table-cell">
+						<div class="clever-title">
+							<div class="icon_carousel">
+					    		<uib-carousel interval="2500" no-wrap="false">
+									<uib-slide>
+										<i class="fa fa-code"></i>
+									</uib-slide>
+									<uib-slide>
+										<img src="img/telescope-icon.png">
+									</uib-slide>
+									<uib-slide ng-repeat="icon in icons | orderBy:random">
+										<i class="fa" ng-class="icon"></i>
+									</uib-slide>
+								</uib-carousel>
+					    	</div>
+						</div>
+						<ul>
+							<li><a ui-sref="home">home</a></li>
+							<li><a ui-sref="portfolio">portfolio</a></li>
+							<li><a ui-sref="photography">photography</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<button class="open-button"><i class="fa fa-bars"></i></button>
+		</div>
+	</div>
+
+	<!-- ANGULAR DYNAMIC CONTENT -->
+	<div class="container-fluid">
+		<div class="ui-view-container">
+			<div ui-view></div>
+		</div>
+	</div>
+
+	<!-- JS -->
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-animate/angular-animate.min.js"></script>
+	<script src="libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+	<!-- ANGULAR CUSTOM -->
+	<script src="js/controllers/mainCtrl.js"></script>
+	<script src="js/controllers/portfolioCtrl.js"></script>
+	<script src="js/services/portfolioServ.js"></script>
+	<script src="js/controllers/photographyCtrl.js"></script>
+	<script src="js/services/photographyServ.js"></script>
+	<script src="js/appRoutes.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+</html>

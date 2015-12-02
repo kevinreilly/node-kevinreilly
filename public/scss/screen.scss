@@ -1,0 +1,258 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+
+$lightGrey: #f5f5f5;
+
+/* General */
+html, body {
+	font-family:'Ubuntu',sans-serif;
+	font-weight:300;
+	font-size:18px;
+	color:$lightGrey;
+	overflow:hidden;
+	//background:#000;
+	-webkit-font-smoothing:antialiased;
+	background-color:$lightGrey;
+	background-image: linear-gradient(45deg, #eee 25%,transparent 25%,transparent 75%, #eee 75%, #eee),linear-gradient(45deg, #eee 25%,transparent 25%,transparent 75%, #eee 75%, #eee);
+	background-size:30px 30px;
+	background-position:0 0,15px 15px;
+}
+body > .container-fluid {
+	padding-top:40px;
+	height:100vh;
+}
+
+/* Vertical aligning */
+.div-table {
+	display:table;
+	height:100%;
+	width:100%;
+}
+.div-table-row {
+	display:table-row;
+}
+.div-table-cell {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.menu {
+	position:absolute;
+	top:0;
+	right:0;
+	left:0;
+	z-index:999;
+	width:100vw;
+	.menu-content {
+		height:100vh;
+		width:100%;
+		background:$lightGrey;
+		position:absolute;
+		top:-100vh;
+		@include transition(.5s ease-in-out);
+		&.menuShow {
+			top:0;
+		}
+		button {
+			-webkit-appearance:none;
+			position:absolute;
+			left:0;
+			right:0;
+			background:black;
+			color:$lightGrey;
+			border:0;
+			width:100%;
+			height:40px;
+			&.open-button {
+				bottom:-40px;
+			}
+			@media (min-width:768px){
+				&:hover {
+					color:white;
+				}
+			}
+			&:focus {
+				outline:0;
+			}
+			.fa {
+				font-size:24px;
+			}
+		}
+		ul {
+			padding:0;
+			list-style:none;
+		}
+		a {
+			color:black;
+			font-weight:900;
+			font-size:40px;
+			text-transform:uppercase;
+			@media (min-width:768px){
+				font-size:60px;
+				&:hover {
+					background:black;
+					color:$lightGrey;
+					text-decoration:none;
+					padding:0 1vw;
+				}
+			}
+			&:focus {
+				background:black;
+				color:$lightGrey;
+				text-decoration:none;
+			}
+		}
+	}
+}
+
+.full-height {
+	height:100vh;
+}
+
+/* Hero */
+.hero {
+	background-size:cover !important;
+	text-align:center;
+	h1 {
+		font-size: 5vw;
+	    font-weight: 900;
+	    margin-top: 15vh;
+	    background:#000;
+	    text-transform:uppercase;
+	    display:inline-block;
+	    padding:0 1vw;
+	}
+}
+
+/* Clever title */
+.clever-title > div {
+	padding:0;
+}
+.clever-title > div:nth-of-type(1){
+	text-align:right;
+}
+
+/* Icon Carousel */
+.icon_carousel {
+	i.fa {
+		color:black;
+		font-size:60px;
+	}
+	img {
+		height:60px !important;
+		margin:auto;
+	}
+	a.carousel-control, ol.carousel-indicators {
+		display:none;
+	}
+	@media (max-width:768px){
+		i.fa {
+			font-size:40px;
+		}
+		img {
+			height:40px !important;
+		}
+	}
+}
+
+.light-copy {
+	background:$lightGrey;
+	color:black;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+.dark-copy {
+	background:black;
+	color:$lightGrey;
+}
+
+/* Home */
+.home-page {
+	.hero {
+		background:#000 url(../img/kevin-hero-bg.jpg) bottom center no-repeat;
+	}
+	
+}
+
+/* Portfolio */
+.portfolio-page {
+	.hero {
+		background:#000 url(../img/albums/into-the-glacier/into-the-glacier-34.jpg) center center no-repeat;
+	}
+	.portfolio-filters {
+		margin-top:30px;
+	}
+	.portfolio-filters a.btn {
+		background-color:rgba(#000,.8);
+		border:0;
+		border-radius:0;
+		margin:5px;
+		min-width:150px;
+		color:#fff;
+		@include transform(scale(1,1));
+	    @include transition(.5s);
+	}
+	.portfolio-filters a.btn.mouseOn {
+		color:#fff;
+		@include transform(scale(1.1,1.1));
+	}
+	.portfolio-filters a.btn.selected {
+		background:rgba(#fff,.8);
+		color:#333;
+	}
+
+	.portfolio-item {
+		margin-bottom:30px;
+		cursor:pointer;
+	}
+	.portfolio-item > div {
+		overflow:hidden;
+		padding:0;
+		border:1px solid #333;
+	}
+	.portfolio-item .portfolio-item-overlay {
+		position:absolute;
+	    top:0;
+	    background:rgba(0,0,0,.9);
+	    height:100%;
+	    width:100%;
+	    padding:30px;
+	    text-align:center;
+		opacity:1;
+	    @include transition(.5s)
+	}
+	.portfolio-item .portfolio-item-overlay img {
+		width:75%;
+		opacity:.9;
+	}
+	.portfolio-item-open.portfolio-item-hover .portfolio-item-overlay {
+		opacity:0;
+	}
+	.portfolio-item-desc {
+		padding:0 15px 15px;
+		display:none;
+	}
+	.portfolio-item-desc p {
+		font-size:.9em;
+	}
+	@media (min-width:768px){
+		.portfolio-item-hover .portfolio-item-overlay {
+			opacity:0;
+		}
+	}
+	/* Column messiness fix */
+	@media (min-width:768px) and (max-width:991px){
+		.portfolio-list div:nth-of-type(2n+1){
+			clear:both;
+		}
+	}
+	@media (min-width:992px){
+		.portfolio-list div:nth-of-type(3n+1){
+			clear:both;
+		}
+	}
+}

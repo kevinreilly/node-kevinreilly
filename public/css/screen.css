@@ -1,0 +1,315 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* General */
+/* line 11, ../scss/screen.scss */
+html, body {
+  font-family: 'Ubuntu',sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #f5f5f5;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f5f5f5;
+  background-image: linear-gradient(45deg, #eeeeee 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, #eeeeee 75%, #eeeeee), linear-gradient(45deg, #eeeeee 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, #eeeeee 75%, #eeeeee);
+  background-size: 30px 30px;
+  background-position: 0 0,15px 15px;
+}
+
+/* line 24, ../scss/screen.scss */
+body > .container-fluid {
+  padding-top: 40px;
+  height: 100vh;
+}
+
+/* Vertical aligning */
+/* line 30, ../scss/screen.scss */
+.div-table {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 35, ../scss/screen.scss */
+.div-table-row {
+  display: table-row;
+}
+
+/* line 38, ../scss/screen.scss */
+.div-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* line 43, ../scss/screen.scss */
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+}
+/* line 50, ../scss/screen.scss */
+.menu .menu-content {
+  height: 100vh;
+  width: 100%;
+  background: #f5f5f5;
+  position: absolute;
+  top: -100vh;
+  -moz-transition: ease-in-out 0.5s;
+  -o-transition: ease-in-out 0.5s;
+  -webkit-transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.5s;
+}
+/* line 57, ../scss/screen.scss */
+.menu .menu-content.menuShow {
+  top: 0;
+}
+/* line 60, ../scss/screen.scss */
+.menu .menu-content button {
+  -webkit-appearance: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: black;
+  color: #f5f5f5;
+  border: 0;
+  width: 100%;
+  height: 40px;
+}
+/* line 70, ../scss/screen.scss */
+.menu .menu-content button.open-button {
+  bottom: -40px;
+}
+@media (min-width: 768px) {
+  /* line 74, ../scss/screen.scss */
+  .menu .menu-content button:hover {
+    color: white;
+  }
+}
+/* line 78, ../scss/screen.scss */
+.menu .menu-content button:focus {
+  outline: 0;
+}
+/* line 81, ../scss/screen.scss */
+.menu .menu-content button .fa {
+  font-size: 24px;
+}
+/* line 85, ../scss/screen.scss */
+.menu .menu-content ul {
+  padding: 0;
+  list-style: none;
+}
+/* line 89, ../scss/screen.scss */
+.menu .menu-content a {
+  color: black;
+  font-weight: 900;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  /* line 89, ../scss/screen.scss */
+  .menu .menu-content a {
+    font-size: 60px;
+  }
+  /* line 96, ../scss/screen.scss */
+  .menu .menu-content a:hover {
+    background: black;
+    color: #f5f5f5;
+    text-decoration: none;
+    padding: 0 1vw;
+  }
+}
+/* line 103, ../scss/screen.scss */
+.menu .menu-content a:focus {
+  background: black;
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+/* line 112, ../scss/screen.scss */
+.full-height {
+  height: 100vh;
+}
+
+/* Hero */
+/* line 117, ../scss/screen.scss */
+.hero {
+  background-size: cover !important;
+  text-align: center;
+}
+/* line 120, ../scss/screen.scss */
+.hero h1 {
+  font-size: 5vw;
+  font-weight: 900;
+  margin-top: 15vh;
+  background: #000;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0 1vw;
+}
+
+/* Clever title */
+/* line 132, ../scss/screen.scss */
+.clever-title > div {
+  padding: 0;
+}
+
+/* line 135, ../scss/screen.scss */
+.clever-title > div:nth-of-type(1) {
+  text-align: right;
+}
+
+/* Icon Carousel */
+/* line 141, ../scss/screen.scss */
+.icon_carousel i.fa {
+  color: black;
+  font-size: 60px;
+}
+/* line 145, ../scss/screen.scss */
+.icon_carousel img {
+  height: 60px !important;
+  margin: auto;
+}
+/* line 149, ../scss/screen.scss */
+.icon_carousel a.carousel-control, .icon_carousel ol.carousel-indicators {
+  display: none;
+}
+@media (max-width: 768px) {
+  /* line 153, ../scss/screen.scss */
+  .icon_carousel i.fa {
+    font-size: 40px;
+  }
+  /* line 156, ../scss/screen.scss */
+  .icon_carousel img {
+    height: 40px !important;
+  }
+}
+
+/* line 162, ../scss/screen.scss */
+.light-copy {
+  background: #f5f5f5;
+  color: black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 168, ../scss/screen.scss */
+.dark-copy {
+  background: black;
+  color: #f5f5f5;
+}
+
+/* Home */
+/* line 175, ../scss/screen.scss */
+.home-page .hero {
+  background: #000 url(../img/kevin-hero-bg.jpg) bottom center no-repeat;
+}
+
+/* Portfolio */
+/* line 182, ../scss/screen.scss */
+.portfolio-page {
+  /* Column messiness fix */
+}
+/* line 183, ../scss/screen.scss */
+.portfolio-page .hero {
+  background: #000 url(../img/albums/into-the-glacier/into-the-glacier-34.jpg) center center no-repeat;
+}
+/* line 186, ../scss/screen.scss */
+.portfolio-page .portfolio-filters {
+  margin-top: 30px;
+}
+/* line 189, ../scss/screen.scss */
+.portfolio-page .portfolio-filters a.btn {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 0;
+  border-radius: 0;
+  margin: 5px;
+  min-width: 150px;
+  color: #fff;
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+/* line 199, ../scss/screen.scss */
+.portfolio-page .portfolio-filters a.btn.mouseOn {
+  color: #fff;
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+/* line 203, ../scss/screen.scss */
+.portfolio-page .portfolio-filters a.btn.selected {
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+}
+/* line 208, ../scss/screen.scss */
+.portfolio-page .portfolio-item {
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+/* line 212, ../scss/screen.scss */
+.portfolio-page .portfolio-item > div {
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #333;
+}
+/* line 217, ../scss/screen.scss */
+.portfolio-page .portfolio-item .portfolio-item-overlay {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  opacity: 1;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+/* line 228, ../scss/screen.scss */
+.portfolio-page .portfolio-item .portfolio-item-overlay img {
+  width: 75%;
+  opacity: .9;
+}
+/* line 232, ../scss/screen.scss */
+.portfolio-page .portfolio-item-open.portfolio-item-hover .portfolio-item-overlay {
+  opacity: 0;
+}
+/* line 235, ../scss/screen.scss */
+.portfolio-page .portfolio-item-desc {
+  padding: 0 15px 15px;
+  display: none;
+}
+/* line 239, ../scss/screen.scss */
+.portfolio-page .portfolio-item-desc p {
+  font-size: .9em;
+}
+@media (min-width: 768px) {
+  /* line 243, ../scss/screen.scss */
+  .portfolio-page .portfolio-item-hover .portfolio-item-overlay {
+    opacity: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 249, ../scss/screen.scss */
+  .portfolio-page .portfolio-list div:nth-of-type(2n+1) {
+    clear: both;
+  }
+}
+@media (min-width: 992px) {
+  /* line 254, ../scss/screen.scss */
+  .portfolio-page .portfolio-list div:nth-of-type(3n+1) {
+    clear: both;
+  }
+}
